@@ -1,0 +1,210 @@
+<!-- <section>
+      
+    <table width="50%">
+      <tr>
+          <td width="17%">Input Series of Number:</td>
+          <td width="36%"><input name="box1" type="text" id="box1" value="1,2,3,4,5,6" /></td>
+      </tr>
+      
+      <tr>
+         
+          <td>&nbsp;</td>
+         
+          <td></td>
+      
+      </tr>
+      
+      <tr>
+          
+          <td>Max :</td>
+          <td>
+              <div id="maximum"> </div>
+          </td>
+      </tr>
+      
+      <tr>
+         
+          <td>Min :</td>
+         
+          <td>
+         
+              <div id="minimum"> </div>
+         
+          </td>
+      
+      </tr>
+      
+      <tr>
+      
+          <td>Sum :</td>
+      
+          <td>
+      
+              <div id="summation"> </div>
+      
+          </td>
+      
+      </tr>
+      
+      <tr>
+      
+          <td>Average :</td>
+      
+          <td>
+      
+              <div id="average"> </div>
+      
+          </td>
+      
+      </tr>
+      
+      <tr>
+      
+          <td>Reverse Order :</td>
+      
+          <td>
+      
+              <div id="reverseing"> </div>
+      
+          </td>
+      
+      </tr>
+      
+      <tr>
+      
+          <td>&nbsp;</td>
+      
+          <td></td>
+      
+      </tr>
+  
+  </table>
+  <button onclick = "calculate()">calculate</button> -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <section>
+      
+        <table width="50%">
+          <tr>
+              <td width="17%">Input Series of Number:</td>
+              <td width="36%"><input name="box1" type="text" id="box1" value="1,2,3,4,5,6" /></td>
+          </tr>
+          
+          <tr>
+             
+              <td>&nbsp;</td>
+             
+              <td></td>
+          
+          </tr>
+          
+          <tr>
+              
+              <td>Max :</td>
+              <td>
+                  <div id="maximum"> </div>
+              </td>
+          </tr>
+          
+          <tr>
+             
+              <td>Min :</td>
+             
+              <td>
+             
+                  <div id="minimum"> </div>
+             
+              </td>
+          
+          </tr>
+          
+          <tr>
+          
+              <td>Sum :</td>
+          
+              <td>
+          
+                  <div id="summation"> </div>
+          
+              </td>
+          
+          </tr>
+          
+          <tr>
+          
+              <td>Average :</td>
+          
+              <td>
+          
+                  <div id="average"> </div>
+          
+              </td>
+          
+          </tr>
+          
+          <tr>
+          
+              <td>Reverse Order :</td>
+          
+              <td>
+          
+                  <div id="reverseing"> </div>
+          
+              </td>
+          
+          </tr>
+          
+          <tr>
+          
+              <td>&nbsp;</td>
+          
+              <td></td>
+          
+          </tr>
+      
+      </table>
+      <button onclick = "calculate()">calculate</button>
+    
+    
+  </body>
+  </html>
+
+  <script>
+      function calculate() {
+          
+          var values=document.getElementById('box1').value.split(/,/g);
+          
+          var sum = values.reduce(function (a, b) { return parseInt(a) + parseInt(b); });
+          
+          document.querySelector('#maximum').innerHTML = values.max();
+          
+          document.querySelector('#minimum').innerHTML = values.min();
+          
+          document.querySelector('#summation').innerHTML = sum;
+          
+          document.querySelector('#average').innerHTML = sum / values.length;
+          
+          document.querySelector('#reverseing').innerHTML = values.reverse().join(',');
+      }
+
+      Array.prototype.max = function () {
+          
+          return Math.max.apply(null, this);
+      
+      };
+
+      Array.prototype.min = function () {
+         
+          return Math.min.apply(null, this);
+      
+      };
+
+  </script>   
